@@ -83,10 +83,10 @@ public class BidController : ControllerBase
         return BadRequest(ModelState);
     }
 
-    [HttpGet("getbitsbyvehicle/{bidId}")]
-    public async Task<IActionResult> GetBidByVehicleId(int bidId)
+    [HttpGet("getbitsbyvehicle/{vehicleId}")]
+    public async Task<IActionResult> GetBidByVehicleId(int vehicleId)
     {
-        var result = await _bidService.GetBidByVehicleId(bidId);
+        var result = await _bidService.GetBidByVehicleId(vehicleId);
         if (result.isSuccess)
         {
             return Ok(result);
