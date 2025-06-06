@@ -13,6 +13,7 @@ public static class ServiceCollectionExt
         services.AddScoped<IVehicleService, VehicleService>();
         services.AddScoped<IBidService, BidService>();
         services.AddScoped<IMailService, MailService>();
+        services.AddScoped<IPaymentHistoryService,PaymentHistoryService>();
         services.AddScoped(typeof(ApiResponse));
         return services;
     }
