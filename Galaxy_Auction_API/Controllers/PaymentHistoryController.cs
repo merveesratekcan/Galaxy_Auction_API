@@ -35,6 +35,7 @@ public class PaymentHistoryController : ControllerBase
     [HttpPost("CheckIsStatusForAuction")]
     public async Task<ActionResult<ApiResponse>> CheckStatusAuction(CheckStatusModel model)
     {
+
         var response = await _paymentHistoryService.CheckIsStatusForAuction(model.UserId, model.VehicleId);
         return Ok(response);
     }
