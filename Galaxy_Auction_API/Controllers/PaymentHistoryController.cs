@@ -18,7 +18,7 @@ public class PaymentHistoryController : ControllerBase
     }
 
     [HttpPost("CreatePaymentHistory")]
-    public async Task<ActionResult> CreatePaymentHistory(CreatePaymentHistoryDto model)
+    public async Task<IActionResult> CreatePaymentHistory(CreatePaymentHistoryDto model)
     {
      if(ModelState.IsValid)
         {
@@ -33,13 +33,9 @@ public class PaymentHistoryController : ControllerBase
     }
 
     [HttpPost("CheckIsStatusForAuction")]
-    public async Task<ActionResult> CheckStatusAuction(CheckStatusModel model)
+    public async Task<ActionResult<ApiResponse>> CheckStatusAuction(CheckStatusModel model)
     {
         var response = await _paymentHistoryService.CheckIsStatusForAuction(model.UserId, model.VehicleId);
-        if (response.isSuccess)
-        {
-            return Ok(response);
-        }
-        return BadRequest(response);
+        return Ok(response);
     }
 } 
