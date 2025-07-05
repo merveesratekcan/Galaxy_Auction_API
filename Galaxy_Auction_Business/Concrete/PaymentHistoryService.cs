@@ -53,6 +53,7 @@ public class PaymentHistoryService : IPaymentHistoryService
          var objDTO = _mapper.Map<PaymentHistory>(model);
           objDTO.PayDate = DateTime.Now;
             objDTO.IsActive = true;
+            await _context.PaymentHistories.AddAsync(objDTO);
             if(await _context.SaveChangesAsync() > 0)
             {
                 _apiResponse.isSuccess = true;
