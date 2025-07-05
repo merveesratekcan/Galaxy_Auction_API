@@ -29,7 +29,7 @@ public class PaymentHistoryController : ControllerBase
             }
             return BadRequest(response);
         }
-        return BadRequest(ModelState);
+        return BadRequest();
     }
 
     [HttpPost("CheckIsStatusForAuction")]
