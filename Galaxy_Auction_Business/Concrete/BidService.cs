@@ -66,13 +66,13 @@ public class BidService : IBidService
         var returnValue = await CheckIsActive(model.VehicleId);
         var checkPaid = await CheckIsPaidAuction(model.UserId, model.VehicleId);
 
-        //if (!checkPaid)
-        //{
-        //    _response.isSuccess = false;
-        //    _response.ErrorMessages.Add("You must pay the auction fee before placing a bid.");
-        //    return _response;
-        //}
-       
+        if (!checkPaid)
+        {
+            _response.isSuccess = false;
+            _response.ErrorMessages.Add("You must pay the auction fee before placing a bid.");
+            return _response;
+        }
+
 
         if (returnValue == null)
         {
