@@ -72,7 +72,7 @@ public class BidService : IBidService
         //    _response.ErrorMessages.Add("You must pay the auction fee before placing a bid.");
         //    return _response;
         //}
-
+       
 
         if (returnValue == null)
         {
@@ -83,7 +83,7 @@ public class BidService : IBidService
         if (returnValue.Price >= model.BidAmount)
         {
             _response.isSuccess = false;
-            _response.ErrorMessages.Add("Bid amount must be greater than the current price.");
+            _response.ErrorMessages.Add($"Bid amount must be greater than the current price. {returnValue.Price}");
             return _response;
         }
         if (model != null)
@@ -91,7 +91,7 @@ public class BidService : IBidService
             var topPrice = await _context.Bids.Where(x => x.VehicleId == model.VehicleId).OrderByDescending(x => x.BidAmount).ToListAsync();
             if (topPrice.Count != 0)
             {
-                if (topPrice[0].BidAmount >= model.BidAmount)
+                if (topPrice[0].BidAmount >= model.BidAmount && model.BidAmount > topPrice[0].BidAmount + (topPrice[0].BidAmount*2)/100 )
                 {
                     _response.isSuccess = false;
                     _response.ErrorMessages.Add("Bid amount must be greater than the current highest bid.Higher price is :" + topPrice[0].BidAmount);
