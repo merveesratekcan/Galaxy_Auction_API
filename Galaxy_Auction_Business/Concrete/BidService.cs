@@ -131,8 +131,8 @@ public class BidService : IBidService
 
     public async Task<ApiResponse> GetBidByVehicleId(int vehicleId)
     {
-        var obj =await _context.Bids.Where(x => x.VehicleId == vehicleId).ToListAsync();
-        if (obj == null)
+        var obj = await _context.Bids.Include(x=>x.Vehicle).ThenInclude(x=>x.Bids).Where(x => x.VehicleId == vehicleId).ToListAsync();
+        if (obj == null || obj.Count == 0)  // Düzeltildi: Boş liste kontrolü eklendi
         {
             _response.isSuccess = false;
             _response.ErrorMessages.Add("No bids found for this vehicle.");

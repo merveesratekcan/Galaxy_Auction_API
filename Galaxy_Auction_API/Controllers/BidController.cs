@@ -19,14 +19,14 @@ public class BidController : ControllerBase
     [HttpPost("create")]
     public async Task<IActionResult> CreateBid([FromBody] CreateBidDto bidDto)
     {
-     if(ModelState.IsValid)
+        if(ModelState.IsValid)
         {
             var result = await _bidService.CreateBid(bidDto);
             if (result.isSuccess)
             {
                 return Ok(result);
             }
-            return BadRequest("Failed to create bid.");
+            return BadRequest(result); // Hata mesajlarını döndür
         }
         return BadRequest(ModelState);
     }
@@ -39,7 +39,7 @@ public class BidController : ControllerBase
         {
             return Ok(result);
         }
-        return NotFound("Bid not found.");
+        return NotFound(result); // Hata mesajlarını döndür
     }
 
     [HttpPut("update/{bidId}")]
@@ -52,7 +52,7 @@ public class BidController : ControllerBase
             {
                 return Ok(result);
             }
-            return BadRequest("Failed to update bid.");
+            return BadRequest(result); // Hata mesajlarını döndür
         }
         return BadRequest(ModelState);
     }
@@ -65,7 +65,7 @@ public class BidController : ControllerBase
         {
             return Ok(result);
         }
-        return NotFound("Bid not found.");
+        return NotFound(result); // Hata mesajlarını döndür
     }
 
     [HttpPost("auto-create")]
@@ -78,7 +78,7 @@ public class BidController : ControllerBase
             {
                 return Ok(result);
             }
-            return BadRequest("Failed to automatically create bid.");
+            return BadRequest(result); // Hata mesajlarını döndür
         }
         return BadRequest(ModelState);
     }
@@ -91,6 +91,6 @@ public class BidController : ControllerBase
         {
             return Ok(result);
         }
-        return NotFound("No bids found for this vehicle.");
+        return NotFound(result); // Hata mesajlarını döndür
     }
 } 

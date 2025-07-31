@@ -34,8 +34,8 @@ namespace Galaxy_Auction_Data_Access.Context
                     PlateNumber = "34AA21",
                     AuctionPrice = 200.0,
                     AdditionalInformation = "Excellent condition, single owner",
-                    StartTime = new DateTime(2025, 04, 18, 00, 00, 00),
-                    EndTime = new DateTime(2025, 06, 05, 00, 00, 00),
+                    StartTime = new DateTime(2025, 01, 01, 00, 00, 00),
+                    EndTime = new DateTime(2025, 12, 31, 23, 59, 59),
                     IsActive = true,
                     Image = "https://i.gaw.to/content/photos/39/21/392165_2020_Toyota_Camry.jpg",
                     SellerId = "756997f4-c894-419f-ac98-020d1ed6c75b"
@@ -52,9 +52,9 @@ namespace Galaxy_Auction_Data_Access.Context
                     PlateNumber = "34AA21",
                     AuctionPrice = 200.0,
                     AdditionalInformation = "Good condition, one previous owner",
-                    StartTime = new DateTime(2025, 04, 18, 00, 00, 00),
-                    EndTime = new DateTime(2025, 05, 12, 00, 00, 00),
-                    IsActive = false,
+                    StartTime = new DateTime(2025, 01, 01, 00, 00, 00),
+                    EndTime = new DateTime(2025, 12, 31, 23, 59, 59),
+                    IsActive = true,
                     Image = "https://i.pinimg.com/originals/4f/b7/96/4fb796d99758f4889338c69efc74dbfe.jpg",
                     SellerId = "756997f4-c894-419f-ac98-020d1ed6c75b"
                 },
@@ -70,8 +70,8 @@ namespace Galaxy_Auction_Data_Access.Context
                     PlateNumber = "34AA21",
                     AuctionPrice = 200.0,
                     AdditionalInformation = "Low mileage, well-maintained",
-                    StartTime = new DateTime(2025, 04, 18, 00, 00, 00),
-                    EndTime = new DateTime(2025, 06, 29, 00, 00, 00),
+                    StartTime = new DateTime(2025, 01, 01, 00, 00, 00),
+                    EndTime = new DateTime(2025, 12, 31, 23, 59, 59),
                     IsActive = true,
                     Image = "https://www.autopartmax.com/images/cUpload/FORD%20Truck-F150%20Raptor.jpg",
                     SellerId = "756997f4-c894-419f-ac98-020d1ed6c75b"
@@ -88,8 +88,8 @@ namespace Galaxy_Auction_Data_Access.Context
                     PlateNumber = "34AA21",
                     AuctionPrice = 200.0,
                     AdditionalInformation = "Great condition, low mileage",
-                    StartTime = new DateTime(2025, 04, 18, 00, 00, 00),
-                    EndTime = new DateTime(2025, 06, 05, 00, 00, 00),
+                    StartTime = new DateTime(2025, 01, 01, 00, 00, 00),
+                    EndTime = new DateTime(2025, 12, 31, 23, 59, 59),
                     IsActive = true,
                     Image = "https://www.jonathanmotorcars.com/imagetag/631/3/l/Used-2017-Nissan-Altima-25-SV-Premium.jpg",
                     SellerId = "756997f4-c894-419f-ac98-020d1ed6c75b"
@@ -106,13 +106,12 @@ namespace Galaxy_Auction_Data_Access.Context
                     AuctionPrice = 200.0,
                     PlateNumber = "34AA21",
                     AdditionalInformation = "Well-maintained, single owner",
-                    StartTime = new DateTime(2025, 04, 18, 00, 00, 00),
-                    EndTime = new DateTime(2025, 06, 29, 00, 00, 00),
+                    StartTime = new DateTime(2025, 01, 01, 00, 00, 00),
+                    EndTime = new DateTime(2025, 12, 31, 23, 59, 59),
                     IsActive = true,
                     Image = "https://cdn.carbuzz.com/gallery-images/2016-chevrolet-malibu-carbuzz-489817-1600.jpg",
                     SellerId = "756997f4-c894-419f-ac98-020d1ed6c75b"
                 }
-                // Devamı için diğer 16 aracı da aynı şekilde StartTime ve EndTime sabit olacak şekilde ekleyebilirsin.
             );
         }
     }
