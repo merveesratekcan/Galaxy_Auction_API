@@ -30,11 +30,10 @@ public class Vehicle
     
     public ApplicationUser Seller { get; set; }
 
-    [JsonIgnore]
     public virtual List<Bid> Bids { get; set; }
-    //public Vehicle()
-    //{
-    //    Bids = new List<Bid>();
-    //}
+    public Vehicle()
+    {
+        Bids = new List<Bid>();
+    }
 
 }
