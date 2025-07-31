@@ -105,7 +105,7 @@ public class VehicleService : IVehicleService
 
     public async Task<ApiResponse> GetVehicleById(int vehicleId)
     {
-        var result=await _context.Vehicles.Include(x=>x.Seller).FirstOrDefaultAsync(x=>x.VehicleId == vehicleId);
+        var result=await _context.Vehicles.Include(x=>x.Seller).Include(x => x.Bids).FirstOrDefaultAsync(x=>x.VehicleId == vehicleId);
         if(result != null)
         {
             _response.isSuccess = true;

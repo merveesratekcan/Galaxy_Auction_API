@@ -29,6 +29,8 @@ public class Vehicle
     [JsonIgnore]
     
     public ApplicationUser Seller { get; set; }
+
+    [JsonIgnore]
     public virtual List<Bid> Bids { get; set; }
     //public Vehicle()
     //{
