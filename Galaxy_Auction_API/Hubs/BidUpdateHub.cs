@@ -32,6 +32,7 @@ public class BidUpdateHub:Hub
         var connectionId = Context.ConnectionId;
         _connectionManager.RemoveConnection(connectionId);
         return base.OnDisconnectedAsync(exception);
+
     }
 
 
