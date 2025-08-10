@@ -1,4 +1,5 @@
 using Galaxy_Auction_API.Extensions;
+using Galaxy_Auction_API.Hubs;
 using Galaxy_Auction_Business.Abstraction;
 using Galaxy_Auction_Business.Concrete;
 using Galaxy_Auction_Business.Mapper;
@@ -28,6 +29,7 @@ builder.Services.AddSwaggerGen(x =>
 
 //Authomapper Configuration
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddSignalR();
 
 //builder.Services.AddControllers()
 //    .AddJsonOptions(options =>
@@ -61,6 +63,9 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapHub<BidUpdateHub>("/BidUpdate/Hub");
+
 app.MapControllers();
 
 app.Run();

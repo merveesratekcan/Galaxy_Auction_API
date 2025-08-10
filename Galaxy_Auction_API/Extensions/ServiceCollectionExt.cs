@@ -1,3 +1,4 @@
+using Galaxy_Auction_API.Hubs.ConnectionManagement;
 using Galaxy_Auction_Business.Abstraction;
 using Galaxy_Auction_Business.Concrete;
 using Galaxy_Auction_Core.MailHelper;
@@ -14,6 +15,7 @@ public static class ServiceCollectionExt
         services.AddScoped<IBidService, BidService>();
         services.AddScoped<IMailService, MailService>();
         services.AddScoped<IPaymentHistoryService,PaymentHistoryService>();
+        services.AddScoped<IConnectionManager, ConnectionManager>();
         services.AddScoped(typeof(ApiResponse));
         return services;
     }
